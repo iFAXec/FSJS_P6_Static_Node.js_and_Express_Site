@@ -1,0 +1,25 @@
+{ 
+    
+projects: [
+
+    {
+    id: 0 ,
+    project_name: "Game Show App - Phrase Hunter",
+    description: "A player tries to guess the phrase by selecting individual letters from an onscreen keyboard",
+    technologies: ["HTML", "CSS", "Javascript"],
+    live_link: "https://ifaxec.github.io/FSJS_P4_OOP_Game_Show_App/",
+    github_link: "https://github.com/iFAXec/FSJS_P4_OOP_Game_Show_App.git",
+    image_urls: ["/images/Phrase_Hunter_1", "/images/Phrase_Hunter_2"]
+    },
+
+    {
+    id: 1 ,
+    project_name: "Public API Requests",
+    description: "An employee directory which communicates with a third-party API ",
+    technologies: ["HTML", "CSS", "Javascript"],
+    live_link: "https://ifaxec.github.io/FSJS_P5_Public_API_Requests/",
+    github_link: "https://github.com/iFAXec/FSJS_P5_Public_API_Requests.git",
+    image_urls: ["/images/Employee_Directory_1", "/images/Employee_Directory_2" ]
+    }
+]
+}
