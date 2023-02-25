@@ -1,4 +1,6 @@
 {
+    "data": {
+                
 "projects":[ 
     {
     "id": 0 ,
@@ -7,7 +9,7 @@
     "technologies": ["HTML", "CSS", "Javascript"],
     "live_link": "https://ifaxec.github.io/FSJS_P4_OOP_Game_Show_App/",
     "github_link": "https://github.com/iFAXec/FSJS_P4_OOP_Game_Show_App.git",
-    "image_urls": ["/images/Phrase_Hunter_1", "/images/Phrase_Hunter_2"]
+    "image_urls": ["../images/Phrase_Hunter_1", "../images/Phrase_Hunter_2"]
     },
     {
     "id": 1 ,
@@ -16,10 +18,10 @@
     "technologies": ["HTML", "CSS", "Javascript"],
     "live_link": "https://ifaxec.github.io/FSJS_P5_Public_API_Requests/",
     "github_link": "https://github.com/iFAXec/FSJS_P5_Public_API_Requests.git",
-    "image_urls": ["/images/Employee_Directory_1", "/images/Employee_Directory_2" ]
+    "image_urls": ["../images/Employee_Directory_1", "../images/Employee_Directory_2" ]
     }
 ]
 }
-
+}
 
 
