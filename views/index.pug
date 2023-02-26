@@ -8,24 +8,25 @@ block content
     h1 My Portfolio 
 
     //- Replace with a description for your portfolio, what this project is, it's purpose, what it's supposed to accomplish, etc. 
-    p The portfolio demonstrates range of projects that I completed in my Full Stack JavaScript Techdegree.
+    p Welcome to my portfolio! Here you'll find a showcase of my web development projects, ranging from sleek and modern websites to powerful web applications. As a skilled Full-stack JavaScript developer, I'm passionate about creating responsive, user-friendly, and high-quality solutions that help businesses achieve their goals. Please take a look around and don't hesitate to reach out if you have any questions or would like to discuss a potential collaboration.
 
 
   article.portfolio-project-thumbs
     .projects-box.box.grid
 
       //- Use the Pug `each` iterator to loop over the projects in your data file  
-      each project in data.projects 
+      each project in projects
         //- Use the example Pug code below and interpolated template literals as needed to dynamically generate:
           //- The paths in the link's href and img's src attributes
           //- The text 'Thumbnail' interpolated with the project title for the img's alt attribute
           //- The project title for the h5 element's text
-        a(href=`#{project.live_link}`) 
-          img(src= `#{project.image_urls[0]}`, alt=`Thumbnail of #{project.project_name}`)         
-          h5 `#{project.project_name}`
+        a(href=project.live_link) 
+         img(src=`${project.image_urls[0]}`, alt=`Thumbnail ${project.project_name}`)         
+         h5= project.project_name
+
 
         .cell
           a(href='#')
-            img.thumbnail(src='https://placehold.it/550x550', alt='')
+            img.thumbnail(src='images/Fay.png', alt='Thumbnail of fay')
             h5 My Site
 
