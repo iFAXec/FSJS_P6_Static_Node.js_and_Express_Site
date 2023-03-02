@@ -9,7 +9,7 @@ const { projects } = data;
 
 app.set("view engine", "pug");
 
-app.use(express.static("public"));
+app.use("/static", express.static("public"));
 
 app.get("/", (req, res) => {
     res.locals.projects = data.projects;
@@ -22,12 +22,26 @@ app.get("/about", (req, res) => {
 
 app.get("/project/:id", (req, res) => {
     const projectId = req.params.id;
-    const projectData = data.projects.find((project) => { project.id === +projectId });
-
+    const projectData = data.projects.find(project => { project.id === +projectId });
     if (projectData) {
-        req.locals.project = projectData;
-        res.render("project");
+        res.render("project", { projectData });
     }
+
+});
+
+
+
+app.use((req, res, next) => {
+    const err = new Error("Oops! The Page doesn't exists")
+    err.status = 404;
+    next(err);
+});
+
+
+app.use((err, req, res, next) => {
+    res.locals.error = err;
+    err.status = 500;
+    err.message = "There is a problem, please try again later"
 });
 
 

@@ -8,7 +8,7 @@
     "technologies": ["HTML", "CSS", "Javascript"],
     "live_link": "https://ifaxec.github.io/FSJS_P4_OOP_Game_Show_App/",
     "github_link": "https://github.com/iFAXec/FSJS_P4_OOP_Game_Show_App.git",
-    "image_urls": ["/images/Phrase_Hunter_1.png", "/images/Phrase_Hunter_2.png"]
+    "image_urls": ["../public/images/Phrase_Hunter_1.png", "../public/images/Phrase_Hunter_2.png"]
     },
     {
     "id": "1" ,
@@ -17,7 +17,7 @@
     "technologies": ["HTML", "CSS", "Javascript"],
     "live_link": "https://ifaxec.github.io/FSJS_P5_Public_API_Requests/",
     "github_link": "https://github.com/iFAXec/FSJS_P5_Public_API_Requests.git",
-    "image_urls": ["/images/Employee_Directory_1.png", "/images/Employee_Directory_2.png" ]
+    "image_urls": ["../public/images/Employee_Directory_1.png", "../public/images/Employee_Directory_2.png"]
     }
 ]
 }

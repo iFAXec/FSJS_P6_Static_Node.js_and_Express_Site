@@ -22,11 +22,10 @@ block content
       .project-tech-links-box.box
         h6 Technologies
         ul
-          each technology in projects.technologies
-          //- Use an `each` iterator and interpolation to dynamically replace the li tags below with the technologies listed for this project
-          li #{technology}
-          li #{technology}
-          li #{technology}
+          each tech in projects.technologies
+            //- Use an `each` iterator and interpolation to dynamically replace the li tags below with the technologies listed for this project
+            li #{tech}   
+          
 
         //- Add the href values to the links below
         a.btn-link(href='https://ifaxec.github.io/FSJS_P4_OOP_Game_Show_App/') Live Demo
