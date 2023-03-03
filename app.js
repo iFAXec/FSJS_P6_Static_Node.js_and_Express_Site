@@ -30,18 +30,24 @@ app.get("/project/:id", (req, res) => {
 });
 
 
-
-app.use((req, res, next) => {
-    const err = new Error("Oops! The Page doesn't exists")
+app.use("/page-not-found", (req, res, next) => {
+    const err = new Error("Oops! The Page doesn't exists");
     err.status = 404;
     next(err);
+
 });
 
 
-app.use((err, req, res, next) => {
+app.use("/error", (err, req, res, next) => {
     res.locals.error = err;
-    err.status = 500;
-    err.message = "There is a problem, please try again later"
+
+    if (err.status === 404) {
+        res.render("page-not-found", { err });
+    } else if (err.status === 500) {
+        res.message = err.message || `There is a problem, please try again later`;
+        res.status(err.status || 500);
+        res.render("error", { err });
+    }
 });
 
 
