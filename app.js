@@ -62,10 +62,12 @@ app.use((err, req, res, next) => {
     if (err.status === 404) {
         res.render("page-not-found", { error: err });
     } else {
+        const err = new Error();
         err.message = err.message || `There is a problem, please try again later`;
-        res.status(err.status || 500);
-        res.locals.error = err;
+        err.status = err.status || 500;
         res.render("error", { error: err });
+        console.log(err.message);
+        console.log(err.status);
     }
 });
 
