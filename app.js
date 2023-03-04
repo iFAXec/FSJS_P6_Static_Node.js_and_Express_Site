@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const data = require("./data.json");
 const { projects } = data;
+const path = require("path");
+const { log } = require("console");
+
 
 //console.log(projects);
 //console.log(projects[0].image_urls[0]);
@@ -9,10 +12,15 @@ const { projects } = data;
 
 app.set("view engine", "pug");
 
+//const imagePath = path.join(images, 'public');
+//app.use(express.static(imagePath));
+
 app.use("/static", express.static("public"));
 
+
 app.get("/", (req, res) => {
-    res.locals.projects = data.projects;
+    res.locals.projects = projects;
+    console.log(res.locals);
     res.render("index");
 })
 
@@ -20,11 +28,20 @@ app.get("/about", (req, res) => {
     res.render("about");
 });
 
+
+//Matching the project number in the url with the project number in the json file
 app.get("/project/:id", (req, res) => {
     const projectId = req.params.id;
+
     const projectData = data.projects.find(project => { project.id === +projectId });
+
     if (projectData) {
         res.render("project", { projectData });
+    } else {
+        const err = new Error();
+        err.message = "Page Not Found"
+        res.status = 404;
+        res.render("page-not-found");
     }
 
 });
