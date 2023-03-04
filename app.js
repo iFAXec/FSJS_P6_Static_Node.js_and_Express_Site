@@ -45,16 +45,16 @@ app.get("/project/:id", (req, res) => {
 });
 
 //Handle error when page is not found
-app.use("/page-not-found", (req, res, next) => {
-    const err = new Error("Oops! The Page doesn't exists");
+app.use((req, res, next) => {
+    const err = new Error("Oops! The Page you requested cannot be found");
     err.status = 404;
+    res.render("page-not-found", { error: err });
     console.log(err.message);
     console.log(res.status());
-    next(err);
 });
 
 
-app.use("/error", (err, req, res, next) => {
+app.use((err, req, res, next) => {
     res.locals.error = err;
 
     if (err.status === 404) {
