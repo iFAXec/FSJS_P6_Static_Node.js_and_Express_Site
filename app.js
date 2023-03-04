@@ -3,7 +3,6 @@ const app = express();
 const data = require("./data.json");
 const { projects } = data;
 const path = require("path");
-const { log } = require("console");
 
 
 //console.log(projects);
@@ -45,12 +44,12 @@ app.get("/project/:id", (req, res) => {
     }
 });
 
-
+//Handle error when page is not found
 app.use("/page-not-found", (req, res, next) => {
     const err = new Error("Oops! The Page doesn't exists");
     err.status = 404;
     console.log(err.message);
-    console.log(res.status);
+    console.log(res.status());
     next(err);
 });
 
@@ -61,9 +60,9 @@ app.use("/error", (err, req, res, next) => {
     if (err.status === 404) {
         res.render("page-not-found", { err });
     } else if (err.status === 500) {
-        res.message = err.message || `There is a problem, please try again later`;
+        err.message = err.message || `There is a problem, please try again later`;
         res.status(err.status || 500);
-        res.render("error", { err });
+        res.render("error");
     }
 });
 

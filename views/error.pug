@@ -1,8 +1,8 @@
-extends layout.pug 
+extends layout
 
 block content
-err.message 
-err.status 
-err.stack
+h1= error.message 
+h2= error.status 
+pre= error.stack
 
 a(href="./index") Home Page 
