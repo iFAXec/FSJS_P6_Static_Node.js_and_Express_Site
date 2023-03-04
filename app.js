@@ -4,7 +4,6 @@ const data = require("./data.json");
 const { projects } = data;
 const path = require("path");
 
-
 //console.log(projects);
 //console.log(projects[0].image_urls[0]);
 
@@ -29,20 +28,19 @@ app.get("/about", (req, res) => {
 
 
 //Matching the project number in the url with the project number in the json file
-app.get("/project/:id", (req, res) => {
+app.get("/project/:id", (req, res, next) => {
     const projectId = req.params.id;
-    const projectData = data.projects.find(project => project.id === +projectId);
-
-    //console.log(projectId);
-    //console.log(project.id);
+    const projectData = data.projects.find(project => project.id === projectId);
     //console.log(projectData);
+    console.log(projectData.id);
 
     if (projectData) {
         res.render("project", { projectData });
     } else {
         const err = new Error();
         err.message = "Page Not Found"
-        res.status = 404;
+        err.status = 404;
+        res.status(err.status);
         next(err);
     }
 });
@@ -56,7 +54,7 @@ app.use((req, res, next) => {
     console.log(err.status);
 });
 
-
+//Handle global error that occurs on the server
 app.use((err, req, res, next) => {
 
     if (err.status === 404) {

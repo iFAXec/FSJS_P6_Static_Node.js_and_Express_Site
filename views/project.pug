@@ -33,10 +33,12 @@ block content
 
     .project-img-box.box
 
-      each image in image_urls 
+      
         //- Replace the URLs in the src attributes below with interpolated template literals to dynamically add your project images, and add descriptions to the alt attributes
-        img.project-img(src=`${image}`, alt=`Thumbnail ${image}`)
-        img.project-img(src=`${image}`, alt=`Thumbnail ${image}`)
+        img.project-img(src=`${projectData.image_urls[0]}`, alt=`Thumbnail ${projectData.project_name}`)
+        img.project-img(src=`${projectData.image_urls[1]}`, alt=`Thumbnail ${projectData.project_name}`)
+        
+        
       
 
     nav.nav
