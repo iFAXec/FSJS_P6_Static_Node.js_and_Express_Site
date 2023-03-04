@@ -20,7 +20,7 @@ app.use("/static", express.static("public"));
 
 app.get("/", (req, res) => {
     res.locals.projects = projects;
-    console.log(res.locals);
+    //console.log(res.locals);
     res.render("index");
 })
 
@@ -43,15 +43,15 @@ app.get("/project/:id", (req, res) => {
         res.status = 404;
         res.render("page-not-found");
     }
-
 });
 
 
 app.use("/page-not-found", (req, res, next) => {
     const err = new Error("Oops! The Page doesn't exists");
     err.status = 404;
+    console.log(err.message);
+    console.log(res.status);
     next(err);
-
 });
 
 

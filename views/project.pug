@@ -22,20 +22,21 @@ block content
       .project-tech-links-box.box
         h6 Technologies
         ul
-          each tech in projects.technologies
+          each technology in projects.technologies
             //- Use an `each` iterator and interpolation to dynamically replace the li tags below with the technologies listed for this project
-            li #{tech}   
+            li #{technology}   
           
-
+          
         //- Add the href values to the links below
-        a.btn-link(href='https://ifaxec.github.io/FSJS_P4_OOP_Game_Show_App/') Live Demo
-        a.btn-link(href='https://github.com/iFAXec/FSJS_P4_OOP_Game_Show_App.git') GitHub Repo
+        a.btn-link(href=`${projects.live_link}`) Live Demo
+        a.btn-link(href=`${projects.github_link}`) GitHub Repo
 
     .project-img-box.box
 
-      //- Replace the URLs in the src attributes below with interpolated template literals to dynamically add your project images, and add descriptions to the alt attributes
-      img.project-img(src=`#{projects.image_urls}`, alt=`Thumbnail #{projects.project_name}`)
-      img.project-img(src=`#{projects.image_urls}`, alt=`Thumbnail #{projects.project_name}`)
+      each image in projects.images 
+        //- Replace the URLs in the src attributes below with interpolated template literals to dynamically add your project images, and add descriptions to the alt attributes
+        img.project-img(src=`${image}`, alt=`Thumbnail ${image}`)
+        img.project-img(src=`${image}`, alt=`Thumbnail ${image}`)
       
 
     nav.nav
