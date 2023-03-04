@@ -31,8 +31,11 @@ app.get("/about", (req, res) => {
 //Matching the project number in the url with the project number in the json file
 app.get("/project/:id", (req, res) => {
     const projectId = req.params.id;
+    const projectData = data.projects.find(project => project.id === +projectId);
 
-    const projectData = data.projects.find(project => { project.id === +projectId });
+    //console.log(projectId);
+    //console.log(project.id);
+    //console.log(projectData);
 
     if (projectData) {
         res.render("project", { projectData });
@@ -40,7 +43,7 @@ app.get("/project/:id", (req, res) => {
         const err = new Error();
         err.message = "Page Not Found"
         res.status = 404;
-        res.render("page-not-found");
+        next(err);
     }
 });
 
@@ -62,7 +65,7 @@ app.use((err, req, res, next) => {
         err.message = err.message || `There is a problem, please try again later`;
         res.status(err.status || 500);
         res.locals.error = err;
-        res.render("error");
+        res.render("error", { error: err });
     }
 });
 
