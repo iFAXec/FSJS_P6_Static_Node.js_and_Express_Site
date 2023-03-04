@@ -32,7 +32,8 @@ app.get("/project/:id", (req, res, next) => {
     const projectId = req.params.id;
     const projectData = data.projects.find(project => project.id === projectId);
     //console.log(projectData);
-    console.log(projectData.id);
+    //console.log(projectId);
+    //console.log(project.id);
 
     if (projectData) {
         res.render("project", { projectData });
