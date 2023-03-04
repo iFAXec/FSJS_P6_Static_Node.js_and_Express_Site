@@ -50,18 +50,18 @@ app.use((req, res, next) => {
     err.status = 404;
     res.render("page-not-found", { error: err });
     console.log(err.message);
-    console.log(res.status());
+    console.log(err.status);
 });
 
 
 app.use((err, req, res, next) => {
-    res.locals.error = err;
 
     if (err.status === 404) {
-        res.render("page-not-found", { err });
-    } else if (err.status === 500) {
+        res.render("page-not-found", { error: err });
+    } else {
         err.message = err.message || `There is a problem, please try again later`;
         res.status(err.status || 500);
+        res.locals.error = err;
         res.render("error");
     }
 });
