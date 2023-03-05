@@ -15,36 +15,13 @@ app.set("view engine", "pug");
 
 app.use("/static", express.static("public"));
 
+const mainRoute = require("./routes");
+const aboutRoute = require("./routes/about");
+const projectRoute = require("./routes/project");
 
-app.get("/", (req, res) => {
-    res.locals.projects = projects;
-    //console.log(res.locals);
-    res.render("index");
-})
-
-app.get("/about", (req, res) => {
-    res.render("about");
-});
-
-
-//Matching the project number in the url with the project number in the json file
-app.get("/project/:id", (req, res, next) => {
-    const projectId = req.params.id;
-    const projectData = data.projects.find(project => project.id === projectId);
-    //console.log(projectData);
-    //console.log(projectId);
-    //console.log(project.id);
-
-    if (projectData) {
-        res.render("project", { projectData });
-    } else {
-        const err = new Error();
-        err.message = "Page Not Found"
-        err.status = 404;
-        res.status(err.status);
-        next(err);
-    }
-});
+app.use(mainRoute);
+app.use("/about", aboutRoute);
+app.use("/project", projectRoute);
 
 //Handle error when page is not found
 app.use((req, res, next) => {
