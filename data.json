@@ -18,6 +18,33 @@
     "live_link": "https://ifaxec.github.io/FSJS_P5_Public_API_Requests/",
     "github_link": "https://github.com/iFAXec/FSJS_P5_Public_API_Requests.git",
     "image_urls": ["../static/images/Employee_Directory_1.png", "../static/images/Employee_Directory_2.png"]
+    },
+    {
+    "id": "2" ,
+    "project_name": "A Random Quote Generator",
+    "description": "An app that displays random famous quotes each time a button is clicked.",
+    "technologies": ["HTML", "CSS", "Javascript"],
+    "live_link": "https://ifaxec.github.io/FSJS_P1_A_Random_Quote_Generator/",
+    "github_link": "https://github.com/iFAXec/FSJS_P1_A_Random_Quote_Generator.git",    
+    "image_urls": ["../static/images/A_Random_Quote_Generator_1.png", "../static/images/A_Random_Quote_Generator_2.png"]
+    },
+    {
+    "id": "3" ,
+    "project_name": "Data Pagination and Filtering",
+    "description": "A program that displays a long list of student information.",
+    "technologies": ["HTML", "CSS", "Javascript"],
+    "live_link": "https://ifaxec.github.io/FSJS_P2_Data_Pagination_and_Filtering/",
+    "github_link": "https://github.com/iFAXec/FSJS_P2_Data_Pagination_and_Filtering.git",
+    "image_urls": ["../static/images/Data_Pagination_and_Filtering_1.png", "../static/images/Data_Pagination_and_Filtering_2.png"]
+    },
+    {
+    "id": "4" ,
+    "project_name": "Interactive Form",
+    "description": "An interactive registration form using JavaScript",
+    "technologies": ["HTML", "CSS", "Javascript"],
+    "live_link": "https://ifaxec.github.io/FSJS_P3_Interactive_Form/",
+    "github_link": "https://github.com/iFAXec/FSJS_P3_Interactive_Form.git",
+    "image_urls": ["../static/images/Interactive_Form_1.png", "../static/images/Interactive_Form_2.png"]
     }
 ]
 }
