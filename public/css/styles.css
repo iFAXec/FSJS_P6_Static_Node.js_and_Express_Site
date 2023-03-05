@@ -21,18 +21,18 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
-  background: #fefefe;
+  background: #E9E8E8;
   background: #000;
   transform: translateX(0px);
   transition: all 0.4s ease-out;
 }
 
 article {
-  background: #fefefe;
+  background: #F5E9CF;  
 }
 
 h1,h2,h3,h4,h5,p{
-  font-family: 'Merriweather', serif;
+  font-family: 'Merriweather', serif;  
 }
 
 h5{
@@ -40,6 +40,7 @@ h5{
   letter-spacing: 2.5px;
   -webkit-text-transform: uppercase;
   text-transform: uppercase;
+  
 }
 
 h6{
@@ -63,7 +64,8 @@ a {
   min-width: 320px;
   height: 100%;
   min-height: 100%;
-  background: #fefefe;
+  background: #F5E9CF;
+  
 }
 
 .flex-row-wrap {
@@ -82,7 +84,7 @@ a {
   width: 100%;
   max-width: 1200px;
   padding: 40px 50px 30px;
-  background: #fefefe;
+  background: #F5E9CF;
   border-bottom: 1px solid #eaeaea;
 }
 
@@ -137,7 +139,7 @@ nav a span {
   height: 100%;
   min-height: 100%;
   padding: 20px;
-  background: #000;
+  background: #20262E;
 }
 
 .sidebar-info-box {
@@ -229,13 +231,14 @@ nav a span {
 
 .portfolio-intro h1 {
   font-size: 1.5rem;
-  color: #0a0a0a;
+  color: #4D455D;
   margin: 0 auto 8px;
 }
 
 .portfolio-intro p {
   text-rendering: optimizeLegibility;
-  font-size: 125%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+  font-size: 130%;
   margin: 0 auto;
   padding-bottom: 40px;
   border-bottom: 1px solid #eaeaea;
